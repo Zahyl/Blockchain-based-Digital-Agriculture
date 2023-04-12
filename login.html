@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>CaribFarm</title>
+	<link rel="stylesheet" type="text/css" href="css/login.css">
+	<script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-app-compat.js"></script>
+     <!-- Firebase Authentication -->
+     <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-auth-compat.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-firestore-compat.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-firestore-compat.js.map"></script>
+  <script>src='app.js'</script>
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+    apiKey: "AIzaSyBl4zrlYIt0CEMR_rewlH61jFcVawXmh90",
+    authDomain: "caribfarms-92bec.firebaseapp.com",
+    projectId: "caribfarms-92bec",
+    storageBucket: "caribfarms-92bec.appspot.com",
+    messagingSenderId: "653078113364",
+    appId: "1:653078113364:web:def7d81d301c7ae8f1d1c1",
+    measurementId: "G-MDSHX3WFPH",
+    databaseURL: 'https://caribfarms-92bec.firebaseio.com'
+      };
+
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    // Firestore settings
+    firebase.firestore().settings({ 
+    timestampsInSnapshots: true,
+    });
+		
+	</script>
+</head>
+<body onload="checkAuthStatus()">
+    <a href="welcome.html">
+        <img src="/images/caribfarm-logo.png" alt="CaribFarm" id="logo" />
+    </a>    
+  <div class="center">
+    <div class="blur-box">
+      <div id="loginForm">
+          <h1 class="center-text">Login</h1>
+          <form id="loginForm">
+            <div class="form-group">
+              <label for="username">Email:</label>
+              <input type="text" id="n_username" name="username" required>
+            </div>
+            <div class="form-group">
+              <label for="password">Password:</label>
+              <input type="password" id="n_password" name="password" required>
+            </div>
+            <button type="submit" id="signin-btn">Login</button>
+          </form>
+          
+          <p>Don't have an account? <a href="#" onclick="showSignupForm()">Create an account here</a></p>
+      </div>
+      <div id="signupForm" style="display:none;">
+          <h2 class="center-text">Sign Up</h2>
+          <form onsubmit="event.preventDefault(); signUp();">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+            </div>
+            <button type="submit">Sign Up</button>
+          </form>
+          <p>Already have an account? <a href="#" onclick="showLoginForm()">Login here</a></p>
+      </div>
+    </div>
+  </div>
+  <script>
+    function showSignupForm() {
+        document.getElementById("loginForm").style.display = "none";
+        document.getElementById("signupForm").style.display = "block";
+    }
+
+    function showLoginForm() {
+        document.getElementById("loginForm").style.display = "block";
+        document.getElementById("signupForm").style.display = "none";
+    }
+    // Get elements
+    const email = document.getElementById('n_username');
+    const password = document.getElementById('n_password');
+    const loginForm = document.getElementById('loginForm');
+    const errorMessage = document.getElementById('error-message');
+
+    // Add submit event to login form
+loginForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  firebase.auth().signInWithEmailAndPassword(email.value, password.value)
+    .then((userCredential) => {
+      // Signed in
+      const user = userCredential.user;
+      // Redirect to dashboard or another page
+      window.location.href = "dashboard.html";
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessageText = error.message;
+      errorMessage.innerHTML = errorMessageText;
+      errorMessage.style.display = 'block';
+    });
+});
+
+    // Add login event
+    signInButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        firebase.auth().signInWithEmailAndPassword(email.value, password.value)
+            .then((userCredential) => {
+                // Signed in
+                const user = userCredential.user;
+                // Redirect to dashboard or another page
+                window.location.href = "dashboard.html";
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessageText = error.message;
+                errorMessage.innerHTML = errorMessageText;
+                errorMessage.style.display = 'block';
+            });
+    });
+    function checkAuthStatus() {
+    firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+            // User is signed in
+            window.location.href = "dashboard.html";
+        }
+    });
+}
+
+    function signUp() {
+        event.preventDefault();
+        const db = firebase.firestore();
+        const name = document.getElementById('name').value;
+        const username = document.getElementById('username').value;
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value.trim();
+        const confirmPassword = document.getElementById('confirmPassword').value.trim();
+        console.log('password:', password);
+        console.log('confirmPassword:', confirmPassword);
+
+        if (password == confirmPassword) {
+            // Create user with email and password
+            firebase.auth().createUserWithEmailAndPassword(email, password)
+                .then((userCredential) => {
+                    // Registration successful
+                    alert("Registration successful, please sign in");
+                    // Add user details to Firestore DB
+                    const cityRef = firebase.firestore().doc("users/" + userCredential.user.uid);
+                    cityRef.set({
+                        email: email,
+                        name: name,
+                        uid: userCredential.user.uid,
+                        username: username
+                    }, { merge: true })
+                        .then(() => {
+                            console.log("Document successfully written!");
+                            // Redirect to index.html page
+                            window.location.href = "index.html";
+                        })
+                        .catch((error) => {
+                            console.error("Error writing document: ", error);
+                        });
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessageText = error.message;
+                    alert(errorMessageText);
+                });
+        } else {
+            document.getElementById("error-message").innerHTML =
+                "Passwords do not match";
+        }
+    }
+</script>
+</body>
+</html>

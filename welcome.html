@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caribfarm</title>
+    <link rel="stylesheet" href="css/welcome.css">
+</head>
+<body>
+    <header>
+        <a href="welcome.html">
+            <img src="/images/caribfarm-logo.jpg" alt="CaribFarm" id="logo" />
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#home" class="scroll-link">Home</a></li>
+                <li><a href="#vision" class="scroll-link">Our Vision</a></li>
+                <li><a href="#about" class="scroll-link">About Us</a></li>
+                <li><a href="#team" class="scroll-link">Meet the Founder</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="home">
+        <h1>Welcome to Caribfarm</h1>
+        <h3>Redefining Caribbean Agriculture through Community</h3>
+    </section>
+    <section id="vision">
+        <h1>Our Vision</h1>
+        <h2>Support Caribbean Farmers</h2>
+        <h3>With <strong>Farmer.Community</strong> digital knowledge sharing platform, our main goal is to provide free and readily accessible information.This free digital farmer's network will support positive, measurable impact in the lives of small-scale farmers throughout the Caribbean.</h3>
+        <h2>Create a Connected Community</h2>
+        <h3>Community is a pillar of innovation.At CaribFarm, we seek to connect farmers across the Caribbean Islands with one another, fostering trust, creating community and sharing answers to their questions.</h3>
+        <h2>Digitalization of Knowledge Sharing</h2>
+        <h3>In conjunction with the 2022 Caribbean & UN World Food Program, we raise attention to climate change<br>and provide farmers with the necessary climate-smart information to enable them to quickly adapt.</h3>
+    </section>
+    <section id="about">
+        <h1>About Us</h1>
+        <h2>Our Mission</h2>
+        <h3>We aim to empower small-scale farmers with information, leading the way in global digital agriculture transformation. Food security is a topic that everyone needs to be aware of. Carib.Farm is an organisation that works toward raising awareness. We give farmers the opportunity to make informed decisions about farming practices, agribusiness, crop and livestock production.</h3>
+        <h2>Our Story</h2>
+        <h3>Lack of adequate climate-smart farming information is a widespread problem. With an unsustainable ratio of farmers to agricultural extension support, Caribbean farmers experience this lack of information more acutely than most.
+            As the manager of her small family farm in the Caribbean, Founder Laura Macneil experienced this issue first-hand. It was through these challenges that her passion to find a digital solution was born.
+            As a start-up, CaribFarm has received local and international attention. In 2021 CaribFarm participated in the UN Food Systems Summit and 2022 as finalist in the Female Founders Competition.Carib.Farm will launch in the Caribbean, collaborating with agriculture experts and industry stakeholders, with the goal to scale across the ACP regions.</h3>
+    </section>
+    <section id="team">
+        <h1>Meet the Founder</h1>
+        <div class="team-member-container">
+            <p class="team-member-description"><br/><h3>As the manager of her small family farm in the Caribbean, Founder Laura Macneil experienced the lack of adequate climate-smart farming information first-hand. It was through these challenges that her passion to find a digital solution was born. As a start-up, CaribFarm has received local and international attention. In 2021 CaribFarm participated in the UN Food Systems Summit and 2022 as finalist in the Female Founders Competition.</h3>
+            <div class="team-member-info">
+                <img src="/images/laura-macneil.jpg" alt="Laura Macneil" class="team-member-thumbnail">
+                <p class="team-member-name">Laura Macneil</p>
+            </div>
+        </div>
+    </section>    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const scrollLinks = document.querySelectorAll('.scroll-link');
+    
+    scrollLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const target = e.target.getAttribute('href');
+            const targetElement = document.querySelector(target);
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    });
+    
+</script>
+</body>
+</html>
+    

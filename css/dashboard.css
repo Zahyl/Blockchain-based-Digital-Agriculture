@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+body {
+    background-image: url("/images/1.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("/images/2.jpg");
+    filter: blur(10px);
+    z-index: -1;
+  }
+  
+  
+  * {
+    font-family: 'Raleway', sans-serif;
+  }
+  
+  #addressContainer p,
+  #balanceContainer p,
+  #borrowFundsForm label,
+  #transactionsTable th,
+  #transactionsTable td {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.2rem;
+  }
+  #transactionsTable td {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+  }
+  
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Raleway', sans-serif;
+  }
+
+img {
+  width: 190px;
+  height: auto;
+  margin-right: 20px;
+}
+
+button {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: 1px solid #e0dede;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 1rem;
+}
+
+button:hover {
+  background-color: #dedede;
+}
+
+#signOutBtn {
+  margin-left: auto;
+}
+
+#addressContainer,
+#balanceContainer {
+  display: none;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.center {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  margin-bottom: 0.7rem;
+  width: 100%;
+}
+
+#borrowFundsForm label[for="amount"] {
+    text-align: center;
+  }
+ 
+#addressContainer p:first-child,
+#balanceContainer p:first-child {
+  font-weight: bold;
+  font-size: 1.2rem;
+  font-family: 'Raleway', sans-serif;
+}
+#transactionsTable th:first-child {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  
+  #transactionsTable th:first-child {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  
+
+.button-number {
+    margin-right: 0px;
+  }
+  
+.button-wrapper + div p:first-child {
+    margin-top: -20px;
+  }
+  
+
+  label[for="address"],
+#address {
+  display: none;
+}
+
+.submit-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  
+  #transactionsTable {
+    border-collapse: collapse;
+    width: 100%;
+    font-family: Arial, sans-serif;
+  }
+  
+  #transactionsTable th,
+  #transactionsTable td {
+    text-align: center;
+    padding: 8px;
+    border: 1px solid #ddd;
+  }
+    
+  #transactionsTable tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  #transactionsTable tbody tr:hover {
+    background-color: #ddd;
+  }
+  
+  #transactionsTable {
+    border-collapse: collapse;
+    background-color: rgb(211, 208, 208);
+    width: 100%;
+  }
+  #transactionsTable {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #transactionsTable th {
+    text-align: center;
+    padding: 8px;
+    border: 1px solid #ddd;
+  }
+  
+  
+  .table-header-row {
+    display: none;
+  }
+  

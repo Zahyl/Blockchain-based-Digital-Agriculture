@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    position: relative;
+    background-image: url('/images/background2.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+img {
+    width: 150px;
+  }
+
+button {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  width: 100px;
+  margin: 1rem;
+}
+
+button:hover {
+  background-color: #ccc;
+}
+
+
+#logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 190px;
+    height: auto;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.center p {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.center form {
+    display: flex;
+    flex-direction: column; /* Changed to column */
+    align-items: center;
+    margin: 1rem;
+    width: 100%;
+}
+
+.center form .form-group {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: flex-start; /* Added */
+}
+
+.center form label {
+    margin-bottom: 0;
+    font-weight: bold;
+    width: 80px; /* Added */
+    text-align: left; /* Added */
+    padding-right: 10px; /* Added */
+}
+
+.center form input {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    margin-bottom: 0.7rem;
+    width: 70%;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.center form button {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    width: 100px;
+    margin-top: 1rem;
+}
+
+.center form button:hover {
+    background-color: #ccc;
+}
+
+.center p a {
+    color: blue;
+    text-decoration: none;
+}
+
+.center p a:hover {
+    text-decoration: underline;
+}
+
+.center .error-message {
+    color: red;
+    margin-top: 1rem;
+}
+
+/* New CSS rules for the blur-box */
+.blur-box {
+    background-color: rgba(220, 242, 219, 0.5); /* Adjust the alpha value to control the transparency */
+    backdrop-filter: blur(5.5px); /* Adjust the blur value */
+    border-radius: 10px; /* Adjust the border radius */
+    padding: 30px; /* Adjust the padding */
+}
