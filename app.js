@@ -18,7 +18,7 @@ document.getElementById('getAddressBtn').addEventListener('click', async () => {
       const encodedCredentials = btoa(credentials);
 
       // API endpoint to retrieve available addresses
-      const url = 'https://u0fa6mg3lo-u0zscxmwe9-connect.us0-aws.kaleido.io/gateways/caribcontract/0x70f10bd254bc76a9d1c7c3c08e9c5c06580f3d20/availableAddresses?input=' + getRandomInt();
+      const url = //enter your api url + getRandomInt();
 
       // Make a request using fetch
       const response = await fetch(url, {
@@ -51,11 +51,11 @@ document.getElementById('getAddressBtn').addEventListener('click', async () => {
 
 document.getElementById('viewBalanceBtn').addEventListener('click', async () => {
   try {
-    const credentials = 'u0wk7bviu4:6rFc_Jelo1WVbjMtfbOqQk0GFwK0czb428kgrom1Vgo';
+    const credentials = //enter your credentials';
     const encodedCredentials = btoa(credentials);
     const balanceContainer = document.getElementById('balanceContainer');
     balanceContainer.style.display = 'block';
-    const url = 'https://u0fa6mg3lo-u0zscxmwe9-connect.us0-aws.kaleido.io/gateways/caribcontract/0x70f10bd254bc76a9d1c7c3c08e9c5c06580f3d20/getBalance?lenderAddress=0xc6ba694c95cb2cc8845085f4d39f17b73932d8ba';
+    const url = //enter your api url ;
 
     const response = await fetch(url, {
       method: 'GET',
@@ -96,7 +96,7 @@ document.getElementById('submitBorrowFundsBtn').addEventListener('click', async 
 
       try {
         // Set the App credentials
-        const credentials = 'u0wk7bviu4:6rFc_Jelo1WVbjMtfbOqQk0GFwK0czb428kgrom1Vgo';
+        const credentials = //enter your credentials';
         const encodedCredentials = btoa(credentials);
         const address = localStorage.getItem('userAddress');
         const addressInput = document.getElementById('address');
@@ -115,7 +115,7 @@ document.getElementById('submitBorrowFundsBtn').addEventListener('click', async 
           body: JSON.stringify({
             "amountToBorrow": `${amount}`,
             "borrowerName": `${username}`,
-            "lender": "0xc6ba694c95cb2cc8845085f4d39f17b73932d8ba"
+            "lender": //lender address from Kaleido
           })
         });
 
