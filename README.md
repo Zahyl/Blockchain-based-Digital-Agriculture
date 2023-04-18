@@ -1,4 +1,4 @@
-Blockchain Architecture for Digital Agriculture
+# Blockchain Architecture for Digital Agriculture
 
 This repository showcases the development of a blockchain-based application for the agriculture industry in collaboration with Carib Farm, a company dedicated to empowering small-scale Caribbean farmers through accessible information and financial support. Our goal was to create a secure and transparent platform for microfinanciers to provide financial assistance to farmers.
 
