@@ -1,4 +1,5 @@
 # Blockchain Architecture for Digital Agriculture
+![blockchain](https://github.com/Zahyl/Blockchain-based-Digital-Agriculture/assets/71133664/fbcc63bb-1e36-4a68-b1d0-2e455bd39354)
 
 This repository showcases the development of a blockchain-based application for the agriculture industry in collaboration with Carib Farm, a company dedicated to empowering small-scale Caribbean farmers through accessible information and financial support. Our goal was to create a secure and transparent platform for microfinanciers to provide financial assistance to farmers.
 
