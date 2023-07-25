@@ -17,11 +17,16 @@ This repository showcases the development of a blockchain-based application for 
 
 - **Amazon Amplify:** The website is hosted on Amazon Amplify.
 
-### Project Timeline
-
-The project took four months to complete, with continuous testing throughout each stage. The resulting prototype demonstrates blockchain technology's potential to streamline funding processes, promote financial inclusion for farmers, and support a resilient and sustainable agricultural sector in the Caribbean.
-
 ### Key Features
 
-By leveraging Ethereum-based blockchain and smart contracts using Solidity, we developed a decentralized, tamper-proof, and transparent platform that ensures trustworthiness and accountability in financial transactions. This blockchain-based solution aligns with our vision of empowering small-scale farmers and leading the global digital agriculture transformation.
+1. **Decentralized and Tamper-Proof Platform:** By leveraging Ethereum-based blockchain and smart contracts using Solidity, we developed a decentralized, tamper-proof, and transparent platform. This ensures trustworthiness and accountability in financial transactions.
 
+2. **Empowering Small-Scale Farmers:** The platform aims to empower small-scale farmers by providing them with easy access to financial assistance and information.
+
+3. **Promoting Financial Inclusion:** Through the use of blockchain technology, the platform promotes financial inclusion for farmers who may have limited access to traditional financial services.
+
+4. **Resilient and Sustainable Agriculture:** The project supports a resilient and sustainable agricultural sector in the Caribbean by streamlining funding processes and facilitating secure transactions.
+
+### Project Timeline
+
+The project took four months to complete, with continuous testing throughout each stage. The resulting prototype demonstrates blockchain technology's potential to revolutionize the agricultural industry and contribute to the global digital agriculture transformation.
